@@ -1,4 +1,4 @@
-pkgname=sioyek-git
+pkgname=sioyek-build-src
 pkgver=2.0.0.r111.g779b52e
 pkgrel=1
 epoch=1
@@ -38,11 +38,6 @@ package() {
     install -D tutorial.pdf -t "${pkgdir}/usr/share/sioyek"
     install -d "${pkgdir}/usr/share/sioyek/shaders"
     cp -r pdf_viewer/shaders/* "${pkgdir}/usr/share/sioyek/shaders"
-
-
-    # TODO: I shouldn't need to do this but they are not copied otherwise ¯\_(ツ)_/¯
-    #mkdir /etc/sioyek
-    sudo cp pdf_viewer/prefs.config /etc/sioyek
-    sudo cp pdf_viewer/keys.config /etc/sioyek
+    install -Dm644 -t "${pkgdir}/etc/sioyek" pdf_viewer/keys.config pdf_viewer/prefs.config
 }
 
