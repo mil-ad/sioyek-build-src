@@ -9,7 +9,7 @@ url="https://github.com/ahrm/sioyek"
 depends=(qt5-base harfbuzz gumbo-parser openjpeg2 jbig2dec libxrandr libjpeg-turbo)
 makedepends=(git qt5-3d mujs libxi glu)
 provides=(sioyek)
-conflicts=(sioyek)
+conflicts=(sioyek sioyek-git sioyek-appimage)
 source=("git+https://github.com/ahrm/sioyek.git")
 sha256sums=('SKIP')
 
